@@ -21,7 +21,7 @@ module.exports = (serviceName, serviceVersion) => {
       [SEMRESATTRS_SERVICE_NAME]: serviceName,
       [SEMRESATTRS_SERVICE_VERSION]: serviceVersion
     }),
-    traceExporter: new ConsoleSpanExporter(),
+    traceExporter: new OTLPTraceExporter(),
     instrumentations: [
       getNodeAutoInstrumentations({
         "@opentelemetry/instrumentation-fs": { enabled: false }
