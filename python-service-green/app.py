@@ -1,9 +1,10 @@
+from opentelemetry.instrumentation.flask import FlaskInstrumentor
 from flask import Flask, request, jsonify
 
 from pymongo import MongoClient
 
 app = Flask(__name__)
-
+FlaskInstrumentor().instrument_app(app)
 # MongoDB setup
 uri = "mongodb://localhost"
 client = MongoClient(uri)
