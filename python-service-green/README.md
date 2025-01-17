@@ -1,5 +1,9 @@
 # Start Service with OTel Agent
+# export span to console
 opentelemetry-instrument --traces_exporter console --metrics_exporter none --logs_exporter none --service_name service-green flask run --port 3010
+
+# export span to OTLP (Jaeger/Grafana)
+opentelemetry-instrument --traces_exporter otlp --metrics_exporter none --logs_exporter none --service_name service-green flask run --port 3010
 
 # Enable OTel Log Instrumentation
 
