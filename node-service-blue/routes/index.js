@@ -38,7 +38,7 @@ router.get("/", async (req, res, next) => {
     const spaces = await votes.countDocuments({ choice: "spaces" });
     const tabs = await votes.countDocuments({ choice: "tabs" });
 
-    if (Math.random() < 0.5 && req.query.choice === "tabs") {
+    if (Math.random() < 0.5) {
       tracer.startActiveSpan("fibonacci", (span) => {
         fibonacci(40);
         span.end();
