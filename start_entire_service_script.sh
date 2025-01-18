@@ -40,3 +40,11 @@ flask run --port 3010
   16686	HTTP	query	serve frontend
   4317	HTTP	collector	accept OpenTelemetry Protocol (OTLP) over gRPC
   4318	HTTP	collector	accept OpenTelemetry Protocol (OTLP) over HTTP
+
+
+#start opentelemetry collector
+#Jaeger collector config
+./otelcol-contrib --config ./collector-config.yml
+
+#Grafana collector config
+./otelcol-contrib --config ./grafana-collector-config.yml
